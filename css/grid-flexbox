@@ -1,0 +1,83 @@
+Grid vs Flexbox
+You could think of grid as "two dimensional" in that we can (if we want to) declare the sizing of rows and columns and then explicitly place things into both rows and columns as we choose.
+Example:
+parent {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr; /* Three columns, one three times as wide as the others */
+  grid-template-rows: 200px auto 100px; /* Three rows, two with explicit widths */
+  grid-template-areas:
+    "header header header"
+    ". main sidebar"
+    "footer . .";
+}
+
+/*
+  Now, we can explicitly place items in the defined rows and columns.
+*/
+.child-1 {
+  grid-area: header;
+}
+
+.child-2 {
+  grid-area: main;
+}
+
+.child-3 {
+  grid-area: sidebar;
+}
+
+.child-4 {
+  grid-area: footer;
+}
+
+
+/*
+  The flex children do most of the work
+*/
+.flexbox {
+  display: flex;
+  > div {
+    &:nth-child(1) { // logo
+      flex: 0 0 100px;
+    }
+    &:nth-child(2) { // search
+      flex: 1;
+      max-width: 500px;
+    }
+    &:nth-child(3) { // avatar
+      flex: 0 0 50px;
+      margin-left: auto;
+    }
+  }
+}
+
+You could think of flexbox as "one dimensional." While flexbox can make rows and columns in the sense that it allows elements to wrap, there's no way to declaratively control where elements end up since the elements merely push along a single axis and then wrap or not wrap accordingly. They do as they do, if you will, along a one-dimensional plane and it's because of that single dimension that we can optionally do things, like align elements along a baseline — which is something grid is unable to do.
+Example:
+parent {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr; /* Three columns, one three times as wide as the others */
+  grid-template-rows: 200px auto 100px; /* Three rows, two with explicit widths */
+  grid-template-areas:
+    "header header header"
+    ". main sidebar"
+    "footer . .";
+}
+
+/*
+  Now, we can explicitly place items in the defined rows and columns.
+*/
+.child-1 {
+  grid-area: header;
+}
+
+.child-2 {
+  grid-area: main;
+}
+
+.child-3 {
+  grid-area: sidebar;
+}
+
+.child-4 {
+  grid-area: footer;
+}
