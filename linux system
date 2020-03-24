@@ -1,0 +1,189 @@
+Linux Structure: 
+
+Linux system
+
+37 linux commands you should know as following link:
+https://www.howtogeek.com/412055/37-important-linux-commands-you-should-know/
+Ctrl +c  ctrl+c ( quit the shell to terminal)
+cd / (bring to the root directory namely apple SSD )
+/根目录  ，  /users  为根目录的下二级目录，   /macbook  (~) 为三级目录
+
+Ls -a
+Ls  -l
+Open -a app name (to open .app file)
+Which bash ( to locate file location)
+Cat  (The cat command (short for “concatenate”) lists the contents of files to the terminal window.)
+Less
+
+Chmod:The chmod command sets the file permissions flags on a file or folder.
+Total 10 value as follow:
+-        rwx              rwx            rwx
+  File    Owner         Group       The others
+
+- stands for file
+d    stands for directory
+r     stands for read
+w   stands for write 
+x    stands for execute.
+
+If the first character is a - the item is a file, if it is a d the item is a directory. The rest of the string is three sets of three characters. From the left, the first three represent the file permissions of the owner, the middle three represent the file permissions of the group and the rightmost three characters represent the permissions for others. In each set, an r stands for read, a w stands for write, and an x stands for execute.
+
+* 0: No permission
+* 1: Execute permission
+* 2: Write permission
+* 3: Write and execute permissions
+* 4: Read permission
+* 5: Read and execute permissions
+* 6: Read and write permissions
+* 7: Read, write and execute permissions
+
+Touch 创建文件 
+ cd  进入文件目录
+cd ..   退出文件目录
+cd ~    退到根目录
+cp  
+mkdir 创建一个目录
+rmdir  删除一个空目录( to remove empty directory)
+rm file.text 删除一个文件
+rm -r  强行删除非空目录dir2 (to remove directory which has file in it)  (r stands for recursive deletion)
+rm -f  强行删除目录dir2 (f stands for force deletion)
+
+rm command is used to remove objects such as files, directories, symbolic links and so on from the file system like UNIX.
+
+
+History
+Alias cls= clear ( Replace the command)
+Sudo (sudo apt-get update)
+Apt-get ( example:apt-get gem)
+
+Ifconfig  (like windows ifconfig)
+Ping    (example: ping goole.com)
+Uname -a (summary of the system)
+Df (to show disk space)
+Echo ( example: echo $name      $ followed by variable name )
+Exit (example: $ exit .  Means to close terminal)
+
+
+
+Using 'vim' to create and edit a file in shell
+sudo Apt-get install vim 
+Mac OS X doesn't have apt-get. There is a package manager called Homebrew that is used instead.
+Use Homebrew to install packages that you would otherwise use apt-get for.
+Using following command 
+brew install vim 
+Instead
+
+Warning
+As of 25 April 2016, homebrew opts the user in to sending analytics by default.
+Running the following command to turn it off
+brew analytics off
+the analytics status can then be checked with the command:
+brew analytics
+
+
+
+_______________________________________________________
+
+Linux
+   	-Bash shell
+    			      -Rvm 
+         			       -Ruby
+                 			         -homebrew
+                     		         			        - git
+                	                 			      -node
+					         			                            -npm
+					             			                         -yarn
+                    			     -gem
+    
+_________________________________________
+Under terminal: using shortcut cmd+shift+K to  connect to new server
+
+shell主要有两大流派：(ssh stands for  secure shell)
+* sh:
+    * burne shell (sh)
+    * burne again shell (bash)
+* csh:
+    * c shell (csh)
+    * tc shell (tcsh)
+    * korn shell (ksh)
+目前，大部分Linux系统预设的shell都是bash。
+
+Bash简介：
+Bash（GNU Bourne-Again Shell）是一个为GNU计划编写的Unix shell，它是许多Linux平台默认使用的shell。
+shell是一个命令解释器，是介于操作系统内核与用户之间的一个绝缘层。准确地说，它也是能力很强的计算机语言，被称为解释性语言或脚本语言。
+不管学习哪种语言，我们程序猿编写的第一个程序就是：hello world，shell脚本也不例外。
+Bash更多参考：
+https://blog.csdn.net/xxpresent/article/details/71104308
+
+UnderCLI下的命令符号 $:
+Using Touch to create a .sh file
+Using 'vim' to create and edit a file
+1. 
+2. Log into your server via SSH.
+3. Navigate to the directory location you wish to create the file, or edit an existing file.
+4. Type in vim followed by the name of the file. For example, if you wish to create (or edit) a new file named test.html, run the following:[server]$ vim test.html Click the letter 'i' on your keyboard to enter INSERT mode in 'vim'.
+5. Start typing into the file.
+6. When finished editing the file, click the ESC key. This takes you out of INSERT mode and -- INSERT -- disappears from the bottom left of your terminal.
+7. To save the file, type in a colon followed by wq. For example:
+  8. Click the 'Enter' key on your keyboard to save.
+To quit vim .press Esc then :wq then press enter(w means write and q means quit)
+执行.sh 文件方法：
+在文件夹目录下Using /bin/bash 后跟文件名
+例：~/Desktop/bashshell $ /bin/bash test.sh
+$ which bash
+
+
+————————————————
+RVM    Rvm 的安装： $ \curl -L https://get.rvm.io | bash -s stable
+先安装rvm，然后选择安装一个ruby版本，就可以提供一个完整的ruby运行环境。之后可以安装brew（brew基于ruby）和gem，分别管理操作系统和ruby的软件包。有了gem之后再安装bundler，因为bundler本身也是一个gem，直接通过gem安装即可。
+Ruby Version Manager是一个命令行工具，可以方便地安装、管理不同的ruby版本，还可以为每个ruby版本创建不同的gem集合（gemsets），从而使不同的ruby应用可以独立使用自己的gem集合。
+rvm的安装：
+1	$ \curl -L https://get.rvm.io | bash -s stable
+
+
+Homebrew的安装很简单，mac自带ruby环境，只需在终端下输入如下指令即可完成Homebrew的安装，如果以下链接失效可以去官网看看新的链接：
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+1
+命令详解：
+
+1.先用 shell命令curl，将文件下载本地，文件名为 install，文件地址：https://raw.githubusercontent.com/Homebrew/install/master/install
+
+2.执行 ruby -e 文件install。
+Ruby 命令行选项
+Ruby 一般是从命令行运行，方式如下：
+$ ruby [ options ] [.] [ programfile ] [ arguments ... ]
+例如：
+选项：-e prog	Programfile：指定 prog 作为程序在命令行中执行。可以指定多个 -e 选项，用来执行多个程序
+更多ruby命令参考一下链接：
+https://www.runoob.com/ruby/ruby-command-line-options.html
+
+
+
+但是ruby命令里面的内容，是下载github上的Homebrew库，但是这个下载是连接国外的网络的，所以比较慢，经常网络断导致安装错误。如果有vpn或者网络较好的情况鼓励使用这种方式，比较方便。
+————————————————
+
+1，Home-brew   homebrew的安装：$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+Homebrew，是Mac OS X上的软件包管理工具，我们能够通过终端方便的使用它来安装管理苹果没有自带的Unix相关工具软件,被誉为OS X不可或缺的套件管理器。
+MacOS下先安装homebrew，
+
+node
+通过 brew 安装 node，node.js自带有内建NPM（node package management)，再通过NPM安装node下的各种套件包（Facebook 发布了新的 node.js 包管理器 Yarn 用以替代 npm,打开命令行输入并执行下面指令安装yarn包管理工具 npm i yarn -g --verbose)
+Yarn 常用指令
+yarn / yarn install 等同于npm install 批量安装依赖
+yarn add xxx 等同于 npm install xxx —save 安装指定包到指定位置
+yarn remove xxx 等同于 npm uninstall xxx —save 卸载指定包
+yarn add xxx —dev 等同于 npm install xxx —save-dev
+yarn upgrade 等同于 npm update 升级全部包
+yarn global add xxx 等同于 npm install xxx -g 全局安装指定包
+————————————————
+版权声明：本文为CSDN博主「Afeyer」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zhu1500527791/article/details/69730748
+
+通过brew 安装 git.  运行：Brew install git
+
+
+2，Gems
+RubyGems是一个包管理框架，提供了ruby社区gem的托管服务，用于方便地下载、安装和使用ruby软件包。ruby软件包被称为gem，包含了ruby应用或库。要升级到最新的RubyGems，运行:gem update --system
+
+
